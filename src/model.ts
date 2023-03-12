@@ -1,8 +1,16 @@
+import fs from 'fs';
 import * as config from './config.js';
+import { IJob, ISkill } from './interfaces.js';
+
+const jobs: IJob[] = JSON.parse(fs.readFileSync('./dev/data/jobs.json', 'utf8'));
+const skills: ISkill[] = JSON.parse(fs.readFileSync('./dev/data/skills.json', 'utf8'));
 
 export const getJobs = async () => {
-	const jobs = [];
 	return jobs;
+}
+
+export const getSkills = async () => {
+	return skills;
 }
 
 export const getApiInstructions = () => {
@@ -35,6 +43,7 @@ export const getApiInstructions = () => {
 
 <ul>
 	<li>GET <a href="jobs">/jobs</a> - get all jobs</li>
+	<li>GET <a href="skills">/skills</a> - get all skills</li>
 </ul>
 	`;
 }

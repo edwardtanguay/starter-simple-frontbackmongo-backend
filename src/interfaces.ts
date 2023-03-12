@@ -1,13 +1,16 @@
-export interface INewBook {
-	title: string,
-	description: string,
-	numberOfPages: number,
-	language: string,
-	imageUrl: string,
-	buyUrl: string
+export interface IJob {
+	id: number;
+	title: string;
+	company: string;
+	url: string;
+	description: string;
+	skillList: number;
+	publicationDate: string;
 }
 
-export interface IBook extends INewBook{
-	_id: string,
-	languageText: string,
+export interface ISkill {
+	idCode: string;
+	name: string;
+	url: string;
+	description: string;
 }

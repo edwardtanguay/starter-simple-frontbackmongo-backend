@@ -15,6 +15,11 @@ app.get('/jobs', async (req, res) => {
 	res.status(200).json(jobs);
 });
 
+app.get('/skills', async (req, res) => {
+	const skills = await model.getSkills();
+	res.status(200).json(skills);
+});
+
 app.listen(config.PORT, () => {
 	console.log(`${config.APP_NAME} is listening on port http://localhost:${config.PORT}`);
 });
