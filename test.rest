@@ -1,0 +1,7 @@
+@url = http://localhost:5501
+
+### GET INFO
+GET {{url}}
+
+### GET ALL BOOKS
+GET {{url}}/jobs
