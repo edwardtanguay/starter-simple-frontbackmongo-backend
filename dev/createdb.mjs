@@ -5,8 +5,16 @@ dotenv.config();
 
 const connectionUrl = process.env.MONGODB_CONNECTION;
 const dbName = process.env.MONGODB_DBNAME;
+const dataSources = [
+	{
+		name: 'jobs',
+		pathAndFileName: './dev/data/jobs.json'
+	},
+	{
+		name: 'skills',
+		pathAndFileName: './dev/data/skills.json'
+	}
+];
 
-// TODO: make one array
-tools.createDB(connectionUrl, dbName, ['jobs', 'skills']);
-tools.importDataIntoCollection(connectionUrl, dbName, 'jobs', './dev/data/jobs.json');
-tools.importDataIntoCollection(connectionUrl, dbName, 'skills', './dev/data/skills.json');
+tools.createDB(connectionUrl, dbName, dataSources.map(m => m.name));
+dataSources.forEach(m => tools.importDataIntoCollection(connectionUrl, dbName, m.name, m.pathAndFileName));
