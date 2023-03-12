@@ -4,12 +4,10 @@ import cors from 'cors';
 import * as config from './config.js';
 
 const app = express();
-app.use(cors);
+app.use(cors());
 
 app.get('/', (req: express.Request, res: express.Response) => {
-	console.log('test001');
-	res.send('testing');
-	// res.send(model.getApiInstructions());
+	res.send(model.getApiInstructions());
 });
 
 app.get('/jobs', async (req, res) => {
