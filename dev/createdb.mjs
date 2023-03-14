@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const connectionUrl = process.env.MONGODB_CONNECTION;
+const connectionUrl = process.env.MONGODB_URL;
 const dbName = process.env.MONGODB_DBNAME;
 const dataSources = [
 	{

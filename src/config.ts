@@ -8,7 +8,7 @@ export const SECONDS_TILL_SESSION_TIMEOUT = Number(process.env.SECONDS_TILL_SESS
 
 export const PORT = process.env.PORT;
 
-export const MONGODB_CONNECTION = process.env.MONGODB_CONNECTION;
+export const MONGODB_CONNECTION = `${process.env.MONGODB_URL}/${process.env.MONGODB_DBNAME}`;
 
 export const SESSION_SECRET = process.env.SESSION_SECRET;
 

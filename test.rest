@@ -3,5 +3,8 @@
 ### GET INFO
 GET {{url}}
 
-### GET ALL BOOKS
+### GET ALL JOBS
 GET {{url}}/jobs
+
+### GET ALL SKILLS
+GET {{url}}/skills
